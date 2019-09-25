@@ -1,25 +1,15 @@
 <div class="row alt-min container-fluid">
     
-    <div class="table-responsive">
-        <table class="table">
-            <thead class="thead-light">
-              <tr>
-                <th>Titulo</th>
-                <th>Descripcion</th>
-          
-              </tr>
-            </thead>
-            <tbody *ngFor="let usuario of usuarios | async">
-              <tr *ngFor="let usuario of employees | async">
-                <td>{{usuario.titulo}}</td>
-                <td>{{usuario.descripcion}}</td>
-               
-               
-              </tr>
-            </tbody>
-          </table>
+  <div style="text-align:center">
+    <h1>
+     
+    </h1>
 
-</div>
+  </div>
+  <div *ngIf="usuario">
+      <h2>{{ usuario.title}} </h2>
+      <h2>{{ usuario.description}} </h2> 
+  </div>
 </div>
 
 

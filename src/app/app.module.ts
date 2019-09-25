@@ -6,7 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ListUserComponent } from './list-user/list-user.component'; 
-import { LoginService } from './login.service';
+import { LoginService } from './services/login.service';
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';  
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoginService } from './login.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule  
+    HttpClientModule,
+    SlimLoadingBarModule    
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]
