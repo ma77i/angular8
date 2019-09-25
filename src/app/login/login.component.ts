@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../services/login.service'; //importo el servicio
 import {Router} from "@angular/router";
+import { User } from '../model/users';
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-login',
@@ -7,12 +10,24 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor(private router: Router) { }
-
+  
+  constructor( private loginService:LoginService,private router: Router,) { }
+  
+  
 
   onClickSubmit() {
-    this.router.navigate(['list']);
+    this.loginService.getUsers() .subscribe(
+      (data) => { // Success
+        alert(data);
+        this.router.navigate(['list']);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+
+
+    
     
     
  }
