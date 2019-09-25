@@ -12,7 +12,7 @@ export class LoginService {
 
   constructor(private http: HttpClient ) { }
 
-  getUsers()  {
+  getUsers(){
     
    return this.http.get(this.baseUrl);
    

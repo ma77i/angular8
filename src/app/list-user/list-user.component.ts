@@ -9,13 +9,13 @@ import { User } from '../model/users';
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent implements OnInit {
-   usuario;
+   usuario: User
  // @ViewChild(Router,{static: false}) hijo: LoginComponent;loginService:LoginService
 
   constructor(private LoginService: LoginService) { }
 
   ngOnInit() {
-    this.LoginService.getUsers().subscribe((data)=>{
+    this.LoginService.getUsers().subscribe((data:User)=>{
       
       this.usuario = data;
     });
