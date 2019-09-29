@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {LoginService} from "../services/login.service"; //Importo el servicio 
-import { User } from '../model/users';
+import {ApiService} from "../services/api.service"; //Importo el servicio 
+import { Pelicula } from '../model/pelicula';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { User } from '../model/users';
 export class LoginComponent implements OnInit {
   usuario;
 
-  constructor(private router: Router,private LoginService: LoginService) { }
+  constructor(private router: Router,private apiService: ApiService) { }
 
 
   onClickSubmit() {

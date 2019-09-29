@@ -1,0 +1,83 @@
+<div class="content-wrapper">
+
+
+
+    <div class="container-fluid">
+        <h3>Crear Pelicula</h3>
+        <div class="col-12 col-sm-12 col-md-4 text-right">
+            <a class="btn btn-secondary" routerLink="/list">Volver</a>
+        </div>
+        <form [formGroup]="form_add_movie" (ngSubmit)="onSubmit(form_add_movie.value)">
+
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control" formControlName="nombre">
+                        <div
+                            *ngIf="form_add_movie.get('director').hasError('required') && form_add_movie.get('director').touched">
+
+                            <p class="text-danger">Campo Obligatorio</p>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="form-group">
+                        <label for="name">Director</label>
+                        <input type="text" class="form-control" formControlName="director">
+                        <div
+                            *ngIf="form_add_movie.get('director').hasError('required') && form_add_movie.get('director').touched">
+
+                            <p class="text-danger">Campo Obligatorio</p>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="form-group">
+                        <label for="name">Género</label>
+                        <input type="text" class="form-control" formControlName="clasificacion">
+                        <div
+                            *ngIf="form_add_movie.get('clasificacion').hasError('required') && form_add_movie.get('clasificacion').touched">
+
+                            <p class="text-danger">Campo Obligatorio</p>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <div class="form-group">
+                        <label for="name">Año estreno</label>
+                        <input type="text" class="form-control" formControlName="anoEstreno">
+                        <div
+                            *ngIf="form_add_movie.get('anoEstreno').hasError('required') && form_add_movie.get('anoEstreno').touched">
+
+                            <p class="text-danger">Campo Obligatorio</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-4 form-group">
+                    <button [disabled]="form_add_movie.invalid" type="submit" class="btn btn-success col-sm-12">Guardar
+                        cambios</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
