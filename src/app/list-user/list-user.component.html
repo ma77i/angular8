@@ -1,10 +1,20 @@
+
+
+<ng-container *ngIf="peliculas; else elseTemplate">
+    <app-menu>
+  {{usuario}}
+</app-menu>
+</ng-container>
+
+<ng-template #elseTemplate>
+  
+</ng-template>
+
 <div class="row alt-min container-fluid">
   <div *ngIf="peliculas">
     <div class="col-12 col-sm-12 col-md-6">
       <a routerLink="/add" class="btn btn-success" routerLinkActive="active">Agregar Pelicula</a>
-  </div>
-
- 
+    </div>
     <table id="prestaciones" class="table table-striped table-bordered">
       <thead>
         <tr>
@@ -22,11 +32,11 @@
           <td> {{item.director}}</td>
           <td> {{item.clasificacion}} </td>
           <td> {{item.anoEstreno}} </td>
-          <td> 
+          <td>
             <button class="btn btn-primary pull-right" id="buscarAfiliado" type="submit" (click)="verDetalle(item.id)">
-              <span class="glyphicon glyphicon-search"  aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
               Detalle
-          </button></td>
+            </button></td>
 
         </tr>
       </tbody>

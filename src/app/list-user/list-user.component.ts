@@ -11,10 +11,12 @@ import { Observable } from 'rxjs';
 })
 export class ListUserComponent implements OnInit {
   peliculas: Observable<Pelicula[]>;
-
+  usuario = '';
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.usuario = sessionStorage.getItem('loggedUser');
+
     this.reloadData();
 
   }

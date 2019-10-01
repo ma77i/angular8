@@ -3,7 +3,6 @@ import { HttpClientModule } from '@angular/common/http';  //Sirve para comunicar
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';   
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ListUserComponent } from './list-user/list-user.component'; 
@@ -11,7 +10,8 @@ import { ApiService } from './services/api.service';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { CreateMovieComponent } from './create-movie/create-movie.component';
 import { MenuComponent } from './menu/menu.component';
-
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,9 @@ import { MenuComponent } from './menu/menu.component';
     LoginComponent,
     ListUserComponent,
     CreateMovieComponent,
-    MenuComponent
+    MenuComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,9 @@ import { MenuComponent } from './menu/menu.component';
     AppRoutingModule,
     HttpClientModule,
     SlimLoadingBarModule,
-    ReactiveFormsModule    
+    ReactiveFormsModule
+    
+     
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
