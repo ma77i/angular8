@@ -10,10 +10,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent implements OnInit {
-  //peliculas: Observable<Pelicula[]>;
   peliculas: Observable<Pelicula[]>;
-
-  // @ViewChild(Router,{static: false}) hijo: LoginComponent;loginService:LoginService
 
   constructor(private apiService: ApiService) { }
 

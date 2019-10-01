@@ -10,6 +10,7 @@ import { ListUserComponent } from './list-user/list-user.component';
 import { ApiService } from './services/api.service';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { CreateMovieComponent } from './create-movie/create-movie.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CreateMovieComponent } from './create-movie/create-movie.component';
     AppComponent,
     LoginComponent,
     ListUserComponent,
-    CreateMovieComponent
+    CreateMovieComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

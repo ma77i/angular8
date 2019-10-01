@@ -1,72 +1,79 @@
-
-  <div class="mensajes px-3 text-center">
-    <div class="col-12 col-sm-12">
-      <div class="alert alert-danger in row">
-        <div class="offset-1 col-10 col-sm-10">
-          <span id="msj-error"></span>
-        </div>
-        <div class="col-1 col-sm-1 text-right">
-          <a href="javascript:void(0)" onclick="closeError();" class="close" aria-label="Cerrar" title="Cerrar">×</a>
-        </div>
+<div class="mensajes px-3 text-center">
+  <div class="col-12 col-sm-12">
+    <div class="alert alert-danger in row">
+      <div class="offset-1 col-10 col-sm-10">
+        <span id="msj-error"></span>
+      </div>
+      <div class="col-1 col-sm-1 text-right">
+        <a href="javascript:void(0)" onclick="closeError();" class="close" aria-label="Cerrar" title="Cerrar">×</a>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="mensajes-success px-3 text-center">
-    <div class="col-12 col-sm-12">
-      <div class="alert alert-success in row">
-        <div class="offset-1 col-10 col-sm-10">
-          <span id="msj-ok"></span>
-        </div>
-        <div class="col-1 col-sm-1 text-right">
-          <a href="javascript:void(0)" onclick="closeError();" class="close" aria-label="Cerrar" title="Cerrar">×</a>
-        </div>
+<div class="mensajes-success px-3 text-center">
+  <div class="col-12 col-sm-12">
+    <div class="alert alert-success in row">
+      <div class="offset-1 col-10 col-sm-10">
+        <span id="msj-ok"></span>
+      </div>
+      <div class="col-1 col-sm-1 text-right">
+        <a href="javascript:void(0)" onclick="closeError();" class="close" aria-label="Cerrar" title="Cerrar">×</a>
       </div>
     </div>
   </div>
-  <div class="row alt-min container-fluid">
-    <div class="col-md-4 offset-md-4">
-      <div class="col-md-12 text-center">
-        <img src="/assets/images/IOMA-convos-color.png" class="logo-mc-xl">
-      </div>
-      <section id="loginForm" class="mt-4">
-        <form  #login ="ngForm" (ngSubmit)="onClickSubmit(login.value)">
-          <div class="form-group">
-            <label class="col-md-6 control-label" for="userName">CUIT</label>
-            <div class="col-md-12">
-              <div class="input-group">
+</div>
+<div class="row alt-min container-fluid">
+  <div class="col-md-4 offset-md-4">
+    <div class="col-md-12 text-center">
+      <img src="/assets/images/IOMA-convos-color.png" class="logo-mc-xl">
+    </div>
+    <section id="loginForm" class="mt-4">
+      <form [formGroup]="form_login" (ngSubmit)="onSubmit(form_login.value)">
+        <div class="form-group">
+          <label class="col-md-6 control-label" for="userName">Usuario</label>
+          <div class="col-md-12">
+            <div class="input-group">
+              <input class="form-control" id="user" type="text" formControlName="user" />
 
-                <input class="form-control" id="userName" name="userName"  type="text" value="" ngModel />
-              </div>
-            </div>  
-          </div>
-          <div class="form-group">
-            <label class="col-md-6 control-label" for="password">Contrase&#241;a</label>
-            <div class="col-md-12">
-              <div class="input-group">
-
-                <input class="form-control"  id="password" name="password" autocomplete="off"
-                  type="password" ngModel/>
-              </div>
-              
-          </div>
-         </div>
-          <div class="form-group">
-            <div class="col-md-12">
-              <button  class="btn btn-primary col-12 col-sm-12" >Iniciar sesion</button>
-           
             </div>
+            <div *ngIf="form_login.get('user').hasError('required') && form_login.get('user').touched">
+
+              <p class="text-danger">Campo Obligatorio</p>
+            </div>
+
           </div>
-        </form>
-    
+        </div>
+        <div class="form-group">
+          <label class="col-md-6 control-label" for="password">Contrase&#241;a</label>
+          <div class="col-md-12">
+            <div class="input-group">
+              <input class="form-control" id="password" name="password" autocomplete="off" type="password"
+                formControlName="password" />
 
-      </section>
-    </div>
-   
-    <style>
-      .brandright {
-        width: 75%;
-      }
-    </style>
+            </div>
+            <div *ngIf="form_login.get('password').hasError('required') && form_login.get('password').touched">
+              <p class="text-danger">Campo Obligatorio</p>
+            </div>
 
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-12">
+            <button   type="submit" class="btn btn-primary col-12 col-sm-12">Iniciar sesion</button>
+
+          </div>
+        </div>
+      </form>
+
+
+    </section>
   </div>
+
+  <style>
+    .brandright {
+      width: 75%;
+    }
+  </style>
+
+</div>
