@@ -20,21 +20,18 @@
   </div>
   <a class="a-gba-xl" target="_blank" href="https://www.gba.gob.ar/">
     <img src="/assets/images/logo-gba-3.png" class="logo-gba-xl pr-0">
-
   </a>
-  <!-- <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-          <a class="nav-link no-line-break" href="">
-             
-              <i class="fa fa-fw fa-user"></i>
-          </a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link rounded js-scroll-trigger no-line-break" href="">
-              Salir <i class="fa fa-fw fa-sign-out-alt"></i>
-      </a>
-         
-  </ul> -->
-
-
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+        <a class="nav-link no-line-break" href="">
+            {{usuarioLogueado}}
+            <i class="fa fa-fw fa-user"></i>
+        </a>
+    </li>
+    <li *ngIf="isLoggedIn" class="nav-item">
+        <a   class="nav-link rounded js-scroll-trigger no-line-break" routerLink="salir" >
+            Salir <i class="fa fa-fw fa-sign-out-alt"></i>
+    </a>
+    
+</ul> 
 </nav>

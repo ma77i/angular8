@@ -4,19 +4,21 @@ import { ApiService } from '../services/api.service'; //importo el servicio
 import { Router } from "@angular/router";
 import { Pelicula } from '../model/pelicula';
 import { Observable } from 'rxjs';
+import { AutenticacionService } from '../services/autenticacion.service';
 @Component({
   selector: 'app-list-user',
   templateUrl: './list-user.component.html',
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent implements OnInit {
+
+ 
   peliculas: Observable<Pelicula[]>;
-  usuario = '';
-  constructor(private apiService: ApiService) { }
+
+  constructor(private apiService: ApiService,private authenticationService:AutenticacionService) { }
 
   ngOnInit() {
-    this.usuario = sessionStorage.getItem('loggedUser');
-
+ 
     this.reloadData();
 
   }
