@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { LoginComponent } from '../login/login.component';
+import { LoginResponse } from '../others/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -18,16 +21,9 @@ export class AutenticacionService {
 
   }
 
-  authenticationService(username: String, password: String) {
-    return this.http.get(this.baseUrl+ '/auth',
-      { headers: { authorization: this.createBasicAuthToken(username, password) } }).pipe(map((res) => {
-        this.username = username;
-        this.password = password;
-        this.registerSuccessfulLogin(username, password);
-      }));
-
-
-      
+  authenticationService():Observable<LoginResponse> {
+    return this.http.get<LoginResponse>(this.baseUrl+ '/auth');
+ 
   }
 
   createBasicAuthToken(username: String, password: String) {
@@ -55,7 +51,8 @@ export class AutenticacionService {
     if (user === null) return ''
     return user
   }
-
+  
+  
 
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AutenticacionService } from '../services/autenticacion.service';
+import { AuthService } from "angularx-social-login";
+import { SocialUser } from "angularx-social-login";
 
 @Component({
   selector: 'app-header',
@@ -7,23 +8,21 @@ import { AutenticacionService } from '../services/autenticacion.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  isLoggedIn = false;
-  usuarioLogueado = '';
- 
-  constructor(private authenticationService:AutenticacionService) { }
+  private user: SocialUser;
+  private loggedIn: boolean;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
-
-      
-    this.isLoggedIn = this.authenticationService.isUserLoggedIn();
-
-    this.usuarioLogueado=this.authenticationService.getLoggedInUserName();
-    
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+    });
   }
-
-  handleLogout() {
   
-    this.authenticationService.logout();
+  signOut(): void{
+    this.authService.signOut();
   }
 
+ 
 }
