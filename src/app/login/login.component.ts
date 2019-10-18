@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private apiService: ApiService,private authService: AuthService,
     private router: Router, private _builder: FormBuilder) {
-
+  
   }
 
   signInWithGoogle(): void {
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
   signOut(): void {
     this.authService.signOut();
   }
-
+ 
 
   // onSubmit(formData) {
   //   this.submitted = true;
@@ -69,5 +69,6 @@ export class LoginComponent implements OnInit {
     //   password: ['', Validators.required]
     // })
 
+  
   }
 }

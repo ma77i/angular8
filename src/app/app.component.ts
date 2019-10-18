@@ -31,5 +31,6 @@ export class AppComponent {
     if (event instanceof NavigationError) {  
       this.loadingBar.stop();  
     }  
-  }  
+  }
+
 }  
