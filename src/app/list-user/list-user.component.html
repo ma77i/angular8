@@ -9,17 +9,16 @@
   
 </ng-template> -->
 
-<div class="container ">
-
-  
+<div class="content-wrapper">
+  <div class="container-fluid">
   <ng-container *ngIf="loggedIn">
-    <div class="col-12 col-sm-12 col-md-6">
+    <div class="col-sm-12 col-md-6">
       <div class="form-group">
         <a routerLink="/add" class="btn btn-success" routerLinkActive="active">Agregar Pelicula</a>
       </div>
     </div>
 
-    <div class="col">
+    <div class="col col-12">
       <div class="table-responsive">
         <table id="prestaciones" class="table table-striped table-bordered">
           <thead>
@@ -53,4 +52,4 @@
   </ng-container>
 
 
-</div>
+</div></div>
