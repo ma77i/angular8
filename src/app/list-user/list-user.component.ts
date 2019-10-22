@@ -17,7 +17,7 @@ export class ListUserComponent implements OnInit {
 
   peliculas: Observable<Pelicula[]>;
 
-  constructor(private apiService: ApiService, private authService: AuthService) { }
+  constructor(private apiService: ApiService, private authService: AuthService,private router: Router) { }
 
   ngOnInit() {
 
@@ -25,12 +25,7 @@ export class ListUserComponent implements OnInit {
       this.user = user;
       this.loggedIn = (user != null);
     });
-
-
     this.reloadData();
-
-
-
 
   }
 

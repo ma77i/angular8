@@ -15,6 +15,10 @@ import { FooterComponent } from './footer/footer.component';
 import { AutenticacionService } from './services/autenticacion.service';
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider } from "angularx-social-login";
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {NgxMaskModule} from 'ngx-mask';
+
+
 
 let config = new AuthServiceConfig([
   {
@@ -38,7 +42,8 @@ export function provideConfig() {
     CreateMovieComponent,
     MenuComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,8 @@ export function provideConfig() {
     HttpClientModule,
     SlimLoadingBarModule,
     ReactiveFormsModule,
-    SocialLoginModule
+    SocialLoginModule,
+    NgxMaskModule.forRoot()
 
 
   ],

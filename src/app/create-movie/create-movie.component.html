@@ -4,6 +4,11 @@
         <div class="col-12 col-sm-12 col-md-4 text-right">
             <a class="btn btn-secondary" routerLink="/list">Volver</a>
         </div>
+        <ng-container *ngIf="form_alta">
+            <div class="alert alert-success col-12 col-sm-12 col-md-4 ">
+              Operación de Alta con éxito
+            </div>
+        </ng-container>
         <form [formGroup]="form_add_movie" (ngSubmit)="onSubmit(form_add_movie.value)">
 
             <div class="row">
@@ -58,7 +63,7 @@
                 <div class="col-12 col-md-4">
                     <div class="form-group">
                         <label for="name">Año estreno</label>
-                        <input type="text" class="form-control" formControlName="anoEstreno">
+                        <input type="text" class="form-control"  mask="0000" formControlName="anoEstreno">
                         <div
                             *ngIf="form_add_movie.get('anoEstreno').hasError('required') && form_add_movie.get('anoEstreno').touched">
 
